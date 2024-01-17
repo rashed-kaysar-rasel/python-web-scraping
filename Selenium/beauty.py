@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 
-website = "https://besiusa.com/"
+website = "https://www.qrcargo.com/s/track-your-shipment?documentType=MAWB&documentPrefix=157&documentNumber=95819743"
 result = requests.get(website)
 content = result.text
 soup = BeautifulSoup(content,"lxml")
 
-print(soup.prettify())
+print(soup.find('h2').get_text())
